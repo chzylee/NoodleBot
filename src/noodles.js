@@ -57,8 +57,7 @@ module.exports = class NoodleBot {
         else if(this.lower === 'yo momma' || this.lower === 'yo mama'){
             return noodleMomma();
         }
-
-        if(this.noodleStart(text) !== 'no'){
+        else if(this.noodleStart(text) !== 'no'){
             return this.noodleStart(text);
         }
         else{
