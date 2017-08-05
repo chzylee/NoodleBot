@@ -29,6 +29,20 @@ app.post('/webhook', line.middleware(config), (req, res) => {
     .then((result) => res.json(result));
 });
 
+var noodleHandler = function(text) {
+  if(text === 'noodle' || text === 'noodles'){
+    return 'me too';
+  }
+  else{
+    if(event.message.text.endsWith('oodle')){
+    echo.text += ' noodle';
+    }
+    else{
+      echo.text += ' noodles';
+    }
+  }
+}
+
 // event handler
 function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
@@ -38,12 +52,7 @@ function handleEvent(event) {
 
   // create a echoing text message
   var echo = { type: 'text', text: event.message.text };
-  if(event.message.text.endsWith('oodle')){
-    echo.text += ' noodle';
-  }
-  else{
-    echo.text += ' noodles';
-  }
+  echo.text = noodleHandler(event.message.text);
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
