@@ -1,6 +1,7 @@
 # Echo Bot
 
-An example LINE bot just to echo messages (see https://github.com/line/line-bot-sdk-nodejs/tree/master/examples/echo-bot)
+Built from example LINE bot just to echo messages (see https://github.com/line/line-bot-sdk-nodejs/tree/master/examples/echo-bot)     
+Bot that makes jokes and roasts people.
 
 ## How to use
 
@@ -10,12 +11,12 @@ Install deps:
 $ npm install
 ```
 
-Configuration:
+Configuration for Heroku Deployment:
 
 ``` bash
-$ export CHANNEL_SECRET=YOUR_CHANNEL_SECRET
-$ export CHANNEL_ACCESS_TOKEN=YOUR_CHANNEL_ACCESS_TOKEN
-$ export PORT=1234
+$ heroku config:set CHANNEL_SECRET=YOUR_CHANNEL_SECRET
+$ heroku config:set CHANNEL_ACCESS_TOKEN=YOUR_CHANNEL_ACCESS_TOKEN
+$ heroku config:set PORT=1234
 ```
 
 Run:
