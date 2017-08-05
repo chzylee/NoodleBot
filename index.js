@@ -16,10 +16,9 @@ const client = new line.Client(config);
 // about Express itself: https://expressjs.com/
 const app = express();
 
-// setup view
-app.set('views', __dirname + '/views');
+// setup view=
 app.get('/', function(request, response) {
-  response.render('index');
+  response.sendfile('./views/index.html');
 });
 
 // register a webhook handler with middleware
