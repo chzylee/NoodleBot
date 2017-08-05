@@ -38,6 +38,7 @@ function handleEvent(event) {
 
   // create a echoing text message
   var echo = { type: 'text', text: event.message.text + ' noodles'};
+  console.log(event.message.text.endsWith('oodle'));
 
   if(event.message.text.endsWith('oodle')){
     echo = echo + ' noodle';
