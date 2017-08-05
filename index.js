@@ -40,6 +40,7 @@ function handleEvent(event) {
 
   // create a echoing text message
   var echo = { type: 'text', text: event.message.text };
+  noodles.setLower(event.message.text);
   echo.text = noodles.noodleHandler(event.message.text);
 
   // use reply API
