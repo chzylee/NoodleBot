@@ -2,7 +2,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
-const _noodles = require('./lib/noodles');
+const _noodles = require('./src/noodles');
 
 // create LINE SDK config from env variables
 const config = {
