@@ -2,6 +2,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
+const _noodles = require('./lib/noodles');
 
 // create LINE SDK config from env variables
 const config = {
@@ -15,6 +16,7 @@ const client = new line.Client(config);
 // create Express app
 // about Express itself: https://expressjs.com/
 const app = express();
+const noodles = new _noodles();
 
 // setup view
 app.get('/', function(request, response) {
@@ -29,21 +31,6 @@ app.post('/webhook', line.middleware(config), (req, res) => {
     .then((result) => res.json(result));
 });
 
-var noodleHandler = function(text) {
-  var lower = text.toLowerCase();
-  if(lower === 'noodle' || lower === 'noodles'){
-    return 'me too';
-  }
-  else{
-    if(text.endsWith('oodle')){
-      return text + ' noodle';
-    }
-    else{
-      return text + ' noodles';
-    }
-  }
-}
-
 // event handler
 function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
@@ -53,7 +40,7 @@ function handleEvent(event) {
 
   // create a echoing text message
   var echo = { type: 'text', text: event.message.text };
-  echo.text = noodleHandler(event.message.text);
+  echo.text = noodles.noodleHandler(event.message.text);
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
