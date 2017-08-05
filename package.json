@@ -16,7 +16,7 @@
     "url": "https://github.com/chzylee/NoodleBot/issues"
   },
   "homepage": "https://github.com/chzylee/NoodleBot#readme",
-  "devDependencies": {
+  "dependencies": {
     "@line/bot-sdk": "^2.0.0",
     "express": "^4.15.3"
   }
