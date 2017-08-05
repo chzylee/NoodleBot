@@ -1,5 +1,4 @@
-const _momma = require('../lib/yomomma');
-const momma = new _momma();
+const momma = require('../lib/yomomma');
 
 module.exports = class NoodleBot {
     constructor(){
@@ -11,7 +10,7 @@ module.exports = class NoodleBot {
             'MOAR!',
             'NOODLE'
         ]
-        this.yomomma = momma;
+        this.yomomma = new momma();
     }
 
     setLower(text) {
