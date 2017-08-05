@@ -30,11 +30,12 @@ app.post('/webhook', line.middleware(config), (req, res) => {
 });
 
 var noodleHandler = function(text) {
-  if(text === 'noodle' || text === 'noodles'){
+  var lower = text.toLowerCase();
+  if(lower === 'noodle' || lower === 'noodles'){
     return 'me too';
   }
   else{
-    if(event.message.text.endsWith('oodle')){
+    if(text.endsWith('oodle')){
       return text + ' noodle';
     }
     else{
