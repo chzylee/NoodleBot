@@ -10,6 +10,7 @@ module.exports = class NoodleBot {
             'MOAR!',
             'NOODLE'
         ]
+        this.ends = true;
         this.yomomma = new momma();
     }
 
@@ -51,6 +52,15 @@ module.exports = class NoodleBot {
     }
 
     noodleHandler(text) {
+        if(this.lower === 'noodle off'){
+            this.ends = false;
+            return 'No more noodles';
+        }
+        else if(this.lower === 'noodle on'){
+            this.ends = true;
+            return 'MOAR NOODLES!';
+        }
+
         if(this.lower === 'noodle' || this.lower === 'noodles') {
             return this.noodleAnswer();
         }
@@ -61,7 +71,12 @@ module.exports = class NoodleBot {
             return this.noodleStart(text);
         }
         else{
-            return this.noodleEnd(text);
+            if(this.ends){
+                return this.noodleEnd(text);
+            }
+            else {
+                return null;
+            }
         }
     }
 }
