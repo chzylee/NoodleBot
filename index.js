@@ -42,6 +42,9 @@ function handleEvent(event) {
   var echo = { type: 'text', text: event.message.text };
   noodles.setLower(event.message.text);
   echo.text = noodles.noodleHandler(event.message.text);
+  if(echo.text === null){
+    return;
+  }
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
