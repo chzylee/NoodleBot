@@ -18,7 +18,7 @@ const app = express();
 
 // setup view=
 app.get('/', function(request, response) {
-  response.sendfile('./views/index.html');
+  response.sendfile('./views/main.html');
 });
 
 // register a webhook handler with middleware
