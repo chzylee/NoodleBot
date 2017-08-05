@@ -1,0 +1,19 @@
+{
+  "name": "noodlebot",
+  "version": "1.0.0",
+  "description": "Simple Line bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chzylee/NoodleBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chzylee/NoodleBot/issues"
+  },
+  "homepage": "https://github.com/chzylee/NoodleBot#readme"
+}
