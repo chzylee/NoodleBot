@@ -38,17 +38,12 @@ function handleEvent(event) {
 
   // create a echoing text message
   var echo = { type: 'text', text: event.message.text };
-  console.log(event.message.text.endsWith('oodle'));
-
   if(event.message.text.endsWith('oodle')){
-    echo += ' noodle';
-    console.log(echo);
+    echo.text += ' noodle';
   }
-  else {
-    echo += ' noodles';
-    console.log(echo);
+  else{
+    echo.text += ' noodles';
   }
-  // const echo = { type: 'text', text: event.message.text + ' noodles'};
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
