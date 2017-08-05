@@ -35,10 +35,10 @@ var noodleHandler = function(text) {
   }
   else{
     if(event.message.text.endsWith('oodle')){
-    echo.text += ' noodle';
+      return text + ' noodle';
     }
     else{
-      echo.text += ' noodles';
+      return text + ' noodles';
     }
   }
 }
