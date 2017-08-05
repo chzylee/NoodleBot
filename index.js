@@ -37,7 +37,17 @@ function handleEvent(event) {
   }
 
   // create a echoing text message
-  const echo = { type: 'text', text: event.message.text + ' noodles'};
+  var textlist = event.message.text.split(' ');
+  console.log(textlist);
+  var echo = { type: 'text', text: event.message.text + ' noodles'};
+
+  if(textlist[textlist.length - 1].endsWith('oodle')){
+    echo = echo + ' noodle';
+  }
+  else {
+    echo = echo + ' noodles';
+  }
+  // const echo = { type: 'text', text: event.message.text + ' noodles'};
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
