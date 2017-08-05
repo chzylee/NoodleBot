@@ -16,7 +16,7 @@ const client = new line.Client(config);
 // about Express itself: https://expressjs.com/
 const app = express();
 
-// setup view=
+// setup view
 app.get('/', function(request, response) {
   response.sendfile('./views/main.html');
 });
