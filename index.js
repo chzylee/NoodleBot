@@ -37,11 +37,9 @@ function handleEvent(event) {
   }
 
   // create a echoing text message
-  var textlist = event.message.text.split(' ');
-  console.log(textlist);
   var echo = { type: 'text', text: event.message.text + ' noodles'};
 
-  if(textlist[textlist.length - 1].endsWith('oodle')){
+  if(event.message.text.endsWith('oodle')){
     echo = echo + ' noodle';
   }
   else {
