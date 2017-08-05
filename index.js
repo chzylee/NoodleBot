@@ -37,14 +37,16 @@ function handleEvent(event) {
   }
 
   // create a echoing text message
-  var echo = { type: 'text', text: event.message.text + ' noodles'};
+  var echo = { type: 'text', text: event.message.text };
   console.log(event.message.text.endsWith('oodle'));
 
   if(event.message.text.endsWith('oodle')){
-    echo = echo + ' noodle';
+    echo += ' noodle';
+    console.log(echo);
   }
   else {
-    echo = echo + ' noodles';
+    echo += ' noodles';
+    console.log(echo);
   }
   // const echo = { type: 'text', text: event.message.text + ' noodles'};
 
