@@ -1,5 +1,3 @@
-const momma = require('../lib/yomomma');
-
 module.exports = class NoodleBot {
     constructor(){
         this.answers = [
@@ -11,7 +9,6 @@ module.exports = class NoodleBot {
             'NOODLE'
         ]
         this.ends = true;
-        this.yomomma = new momma();
     }
 
     setLower(text) {
@@ -21,11 +18,6 @@ module.exports = class NoodleBot {
     noodleAnswer() {
         var index = Math.ceil(Math.random() * (this.answers.length - 1));
         return this.answers[index];
-    } 
-
-    noodleMomma() {
-        var index = Math.ceil(Math.random() * (this.yomomma.jokes.length - 1));
-        return this.yomomma.jokes[index];
     }
 
     noodleStart(text) {
@@ -63,9 +55,6 @@ module.exports = class NoodleBot {
 
         if(this.lower === 'noodle' || this.lower === 'noodles') {
             return this.noodleAnswer();
-        }
-        else if(this.lower === 'yo momma' || this.lower === 'yo mama'){
-            return this.noodleMomma();
         }
         else if(this.noodleStart(text) !== 'no'){
             return this.noodleStart(text);
