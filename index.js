@@ -38,12 +38,17 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
+  var client = new line.Client({
+    channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
+  });
+
   // create a echoing text message
   var echo = { type: 'text', text: event.message.text };
   noodles.setLower(event.message.text);
   echo.text = noodles.noodleHandler(event.message.text);
-  if(echo.text === null){
-    return;
+  if(echo.text === 'Noooooooooooooo[dles]!!!'){
+    client.replyMessage(event.replyToken, echo)
+    return client.leaveGroup(event.source.groupId);
   }
 
   // use reply API
