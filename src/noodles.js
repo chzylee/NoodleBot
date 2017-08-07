@@ -62,13 +62,16 @@ module.exports = class NoodleBot {
         else if(this.lower === 'I ate all the noodles') {
             return 'Noooooooooooooo[dles]!!!';
         }
-        
+
         if(this.on){
             if(this.lower === 'noodle' || this.lower === 'noodles') {
                 return this.noodleAnswer();
             }
             else if(this.noodleStart(text) !== 'no'){
                 return this.noodleStart(text);
+            }
+            else{
+                return this.noodleEnd(text);
             }
         }
     }
