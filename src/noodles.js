@@ -9,6 +9,13 @@ module.exports = class NoodleBot {
             'MOAR!',
             'NOODLE'
         ]
+        this.noodleTypes = [
+            'soggy',
+            'wet',
+            'sticky',
+            'fat',
+            'pool'
+        ]
     }
 
     setLower(text) {
@@ -55,6 +62,7 @@ module.exports = class NoodleBot {
         else if(this.lower === 'I ate all the noodles') {
             return 'Noooooooooooooo[dles]!!!';
         }
+        
         if(this.on){
             if(this.lower === 'noodle' || this.lower === 'noodles') {
                 return this.noodleAnswer();
