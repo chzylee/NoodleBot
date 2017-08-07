@@ -59,7 +59,7 @@ module.exports = class NoodleBot {
             this.on = true;
             return 'MOAR NOODLES!';
         }
-        else if(this.lower === 'I ate all the noodles') {
+        else if(this.lower === 'i ate all the noodles') {
             return 'Noooooooooooooo[dles]!!!';
         }
 
