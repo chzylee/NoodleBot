@@ -1,5 +1,6 @@
 module.exports = class NoodleBot {
     constructor(){
+        this.on = true;
         this.answers = [
             'me too',
             'yes',
@@ -8,7 +9,6 @@ module.exports = class NoodleBot {
             'MOAR!',
             'NOODLE'
         ]
-        this.ends = true;
     }
 
     setLower(text) {
@@ -44,27 +44,23 @@ module.exports = class NoodleBot {
     }
 
     noodleHandler(text) {
-        if(this.lower === 'noodle off'){
-            this.ends = false;
+        if(this.lower === 'noodle off') {
+            this.on = false;
             return 'No more noodles';
         }
-        else if(this.lower === 'noodle on'){
-            this.ends = true;
+        else if(this.lower === 'noodle on') {
+            this.on = true;
             return 'MOAR NOODLES!';
         }
-
-        if(this.lower === 'noodle' || this.lower === 'noodles') {
-            return this.noodleAnswer();
+        else if(this.lower === 'I ate all the noodles') {
+            return 'Noooooooooooooo[dles]!!!';
         }
-        else if(this.noodleStart(text) !== 'no'){
-            return this.noodleStart(text);
-        }
-        else{
-            if(this.ends){
-                return this.noodleEnd(text);
+        if(this.on){
+            if(this.lower === 'noodle' || this.lower === 'noodles') {
+                return this.noodleAnswer();
             }
-            else {
-                return null;
+            else if(this.noodleStart(text) !== 'no'){
+                return this.noodleStart(text);
             }
         }
     }
